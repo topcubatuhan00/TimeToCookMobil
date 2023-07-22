@@ -7,7 +7,9 @@ export default StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         flexDirection: 'row',
-        padding: 10        
+        padding: 10,
+        borderBottomColor: '#DBE2EF',
+        borderBottomWidth: 2, 
     },
     image: {
         width: 170,

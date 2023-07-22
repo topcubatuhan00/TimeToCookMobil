@@ -5,14 +5,29 @@ export default StyleSheet.create({
         padding: 20,
         margin: 10,
         borderRadius: 15,
-        backgroundColor: '#CCEEBC',
+        backgroundColor: '#DBE2EF',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         alignItems: 'center',
+        width: '85%',
     },
     text: {
         fontSize: 24,
         fontWeight: 'bold',
     },
+    BaseContainer:{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        margin: 20
+    },
+    deleteButton:{
+        backgroundColor: 'red',
+        padding: 15,
+        borderRadius: 10,
+        color: 'white',
+        fontWeight: 'bold',
+    }
 })

@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { SafeAreaView, TextInput, View, Button, Text, FlatList, Keyboard } from "react-native";
+import { SafeAreaView, TextInput, View, Button, Text, FlatList, Keyboard, Modal } from "react-native";
 import Header from "./components/Header/Header";
 import styles from './App.style'
 import ProductCard from "./components/ProductCard/ProductCard";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import DatePicker from 'react-native-modern-datepicker'
 
 function App() {
     const [name, setnameValue] = useState("");
-    const [date, setDate] = useState("");
+    const [date, setDate] = useState();
     const [listItems, setListItems] = useState([]);
     const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
+    const [visible, setVisible] = useState(false);
 
     const handleNameChange = (text) => {
         setnameValue(text);
     };
 
-    const handleDateChange = (text) => {
-        setDate(text);
+    const handleDateChange = (propDate) => {
+        setDate(propDate);
     };
 
     const handleAddItem = async () => {
@@ -48,18 +50,17 @@ function App() {
         getStoredItems();
 
     };
+    const getStoredItems = async () => {
+        try {
+            const storedItems = await AsyncStorage.getItem('items');
+            const parsedItems = storedItems ? JSON.parse(storedItems) : [];
+            setListItems(parsedItems);
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     useEffect(() => {
-        const getStoredItems = async () => {
-            try {
-                const storedItems = await AsyncStorage.getItem('items');
-                const parsedItems = storedItems ? JSON.parse(storedItems) : [];
-                setListItems(parsedItems);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
         getStoredItems();
     }, []);
 
@@ -78,7 +79,7 @@ function App() {
         };
     }, []);
 
-    const renderItem = ({ item }) => <ProductCard product={item} />
+    const renderItem = ({ item }) => <ProductCard product={item} getStoredItems={getStoredItems} />
 
     return (
         <SafeAreaView style={styles.baseContainer}>
@@ -97,13 +98,20 @@ function App() {
                         onChangeText={handleNameChange}
                         placeholder="Ürün Adını Girin"
                     />
-                    <TextInput
-                        style={styles.input}
-                        value={date}
-                        onChangeText={handleDateChange}
-                        placeholder="Son Kullanma Tarihini Girin"
-                    />
-                    <Button color={'#3F72AF'} disabled={!name && !date} onPress={handleAddItem} title="Ekle" />
+                    {
+                        date?.length > 0 ?
+                        <Text style={styles.date}>SKT: {date}</Text>
+                        : <Button color={'#EB6440'} onPress={() => setVisible(true)} title="Son Kullanma Tarihi Sec" />
+                    }
+                    <Modal visible={visible}>
+                        <DatePicker
+                            mode='calendar'
+                            selected={date}
+                            onDateChange={handleDateChange}
+                        />
+                        <Button color={'#112D4E'} onPress={() => setVisible(false)} title="Tamam" />
+                    </Modal>
+                    <Button color={'#112D4E'} disabled={!name && !date} onPress={handleAddItem} title="Ekle" />
                 </View>
             </View>
         </SafeAreaView>
