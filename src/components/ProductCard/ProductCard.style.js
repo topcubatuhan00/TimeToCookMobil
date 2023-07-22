@@ -23,6 +23,17 @@ export default StyleSheet.create({
         alignItems: 'center',
         margin: 20
     },
+    Dangercontainer: {
+        padding: 20,
+        margin: 10,
+        borderRadius: 15,
+        backgroundColor: '#EB6440',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '85%',
+    },
     deleteButton:{
         backgroundColor: 'red',
         padding: 15,
