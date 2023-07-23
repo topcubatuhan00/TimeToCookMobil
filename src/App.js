@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { SafeAreaView, TextInput, View, Button, Text, FlatList, Keyboard, Modal } from "react-native";
+import { SafeAreaView, TextInput, View, Button, Text, FlatList, Keyboard, Modal, TouchableHighlight } from "react-native";
 import Header from "./components/Header/Header";
 import styles from './App.style'
 import ProductCard from "./components/ProductCard/ProductCard";
@@ -12,6 +12,7 @@ function App() {
     const [listItems, setListItems] = useState([]);
     const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
     const [visible, setVisible] = useState(false);
+    const [addVisible, setAddVisible] = useState(false);
 
     const handleNameChange = (text) => {
         setnameValue(text);
@@ -83,36 +84,47 @@ function App() {
 
     return (
         <SafeAreaView style={styles.baseContainer}>
-            <Header />
+            <Header style={styles.header} />
             <View style={styles.container}>
-                <View style={[styles.listContainer, isKeyboardOpen && { flex: 1 }]}>
+                <View style={[styles.listContainer]}>
                     <FlatList
                         data={listItems}
                         renderItem={renderItem}
                     />
                 </View>
-                <View style={styles.addContainer}>
-                    <TextInput
-                        style={styles.input}
-                        value={name}
-                        onChangeText={handleNameChange}
-                        placeholder="Ürün Adını Girin"
-                    />
-                    {
-                        date?.length > 0 ?
+            </View>
+            <View style={[styles.addContainer, isKeyboardOpen && { flex: 1, bottom: 250 }, !addVisible && { display: 'none' }]}>
+                <TextInput
+                    style={styles.input}
+                    value={name}
+                    onChangeText={handleNameChange}
+                    placeholder="Ürün Adını Girin"
+                    placeholderTextColor="#FFF"
+                />
+                {
+                    date?.length > 0 ?
                         <Text style={styles.date}>SKT: {date}</Text>
-                        : <Button color={'#EB6440'} onPress={() => setVisible(true)} title="Son Kullanma Tarihi Sec" />
-                    }
-                    <Modal visible={visible}>
-                        <DatePicker
-                            mode='calendar'
-                            selected={date}
-                            onDateChange={handleDateChange}
-                        />
-                        <Button color={'#112D4E'} onPress={() => setVisible(false)} title="Tamam" />
-                    </Modal>
-                    <Button color={'#112D4E'} disabled={!name && !date} onPress={handleAddItem} title="Ekle" />
-                </View>
+                        :
+                        <TouchableHighlight style={styles.SKTButton} onPress={() => setVisible(true)}>
+                            <Text style={styles.SKTButtonText}>Son Kullanma Tarihi Sec</Text>
+                        </TouchableHighlight>
+                }
+                <Modal visible={visible}>
+                    <DatePicker
+                        mode='calendar'
+                        selected={date}
+                        onDateChange={handleDateChange}
+                    />
+                    <Button color={'#112D4E'} onPress={() => setVisible(false)} title="Tamam" />
+                </Modal>
+                <TouchableHighlight style={styles.button} disabled={!name && !date} onPress={handleAddItem} >
+                    <Text style={styles.buttonText}>Ekle</Text>
+                </TouchableHighlight>
+            </View>
+            <View style={[styles.addButonBottom, addVisible && { display: 'none' }]}>
+                <TouchableHighlight onPress={() => setAddVisible(true)}>
+                    <Text style={styles.addButonBottomText}>+</Text>
+                </TouchableHighlight>
             </View>
         </SafeAreaView>
     )
