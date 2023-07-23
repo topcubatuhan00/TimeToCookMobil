@@ -33,6 +33,7 @@ function App() {
                 const parsedItems = storedItems ? JSON.parse(storedItems) : [];
                 const updatedItems = [...parsedItems, newItem];
                 await AsyncStorage.setItem('items', JSON.stringify(updatedItems));
+                setAddVisible(false);
             } catch (error) {
                 console.log(error);
             }
@@ -86,12 +87,10 @@ function App() {
         <SafeAreaView style={styles.baseContainer}>
             <Header style={styles.header} />
             <View style={styles.container}>
-                <View style={[styles.listContainer]}>
-                    <FlatList
-                        data={listItems}
-                        renderItem={renderItem}
-                    />
-                </View>
+                <FlatList
+                    data={listItems}
+                    renderItem={renderItem}
+                />
             </View>
             <View style={[styles.addContainer, isKeyboardOpen && { flex: 1, bottom: 250 }, !addVisible && { display: 'none' }]}>
                 <TextInput
@@ -101,28 +100,31 @@ function App() {
                     placeholder="Ürün Adını Girin"
                     placeholderTextColor="#FFF"
                 />
-                {
-                    date?.length > 0 ?
-                        <Text style={styles.date}>SKT: {date}</Text>
-                        :
-                        <TouchableHighlight style={styles.SKTButton} onPress={() => setVisible(true)}>
-                            <Text style={styles.SKTButtonText}>Son Kullanma Tarihi Sec</Text>
-                        </TouchableHighlight>
-                }
+                <View style={styles.subAddContainer}>
+                    {
+                        date?.length > 0 ?
+                            <Text style={styles.date}>SKT: {date}</Text>
+                            :
+                            <TouchableHighlight underlayColor={'transparent'} style={styles.SKTButton} onPress={() => setVisible(true)}>
+                                <Text style={styles.SKTButtonText}>Son Kullanma Tarihi Sec</Text>
+                            </TouchableHighlight>
+                    }
+                    <TouchableHighlight underlayColor={'transparent'} style={styles.button} disabled={!name && !date} onPress={handleAddItem} >
+                        <Text style={styles.buttonText}>Ekle</Text>
+                    </TouchableHighlight>
+                </View>
                 <Modal visible={visible}>
                     <DatePicker
                         mode='calendar'
                         selected={date}
                         onDateChange={handleDateChange}
                     />
-                    <Button color={'#112D4E'} onPress={() => setVisible(false)} title="Tamam" />
+                    <Button underlayColor={'transparent'} color={'#112D4E'} onPress={() => setVisible(false)} title="Tamam" />
                 </Modal>
-                <TouchableHighlight style={styles.button} disabled={!name && !date} onPress={handleAddItem} >
-                    <Text style={styles.buttonText}>Ekle</Text>
-                </TouchableHighlight>
+
             </View>
             <View style={[styles.addButonBottom, addVisible && { display: 'none' }]}>
-                <TouchableHighlight onPress={() => setAddVisible(true)}>
+                <TouchableHighlight onPress={() => setAddVisible(true)} underlayColor={'transparent'}>
                     <Text style={styles.addButonBottomText}>+</Text>
                 </TouchableHighlight>
             </View>

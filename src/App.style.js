@@ -1,8 +1,12 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-const windowHeight = (Dimensions.get("window").height) - 124;
+const windowHeight = (Dimensions.get("window").height) - 200;
+const Height = (Dimensions.get("window").height)-24;
 
 export default StyleSheet.create({
+    baseContainer: {
+        height: Height
+    },
     container: {
         padding: 10,
         paddingRight: 0,
@@ -16,9 +20,7 @@ export default StyleSheet.create({
         right: 0,
     },
     button: {
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20,
-        backgroundColor: '#F4717F',
+        backgroundColor: '#544E50',
     },
     buttonText: {
         textAlign: 'center',
@@ -27,7 +29,7 @@ export default StyleSheet.create({
         letterSpacing: 1,
     },
     SKTButton: {
-        backgroundColor: '#D9C8C0',
+        backgroundColor: '#544E50',
     },
     SKTButtonText: {
         textAlign: 'center',
@@ -36,34 +38,37 @@ export default StyleSheet.create({
         letterSpacing: 1,
     },
     input: {
-        backgroundColor: '#F4717F',
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
+        backgroundColor: '#544E50',
         color: 'white',
         fontSize: 20,
-        paddingLeft: 30,
+        textAlign: 'center'
     },
     date: {
         fontWeight: 'bold',
         fontSize: 24,
         textAlign: 'center',
-        backgroundColor: '#D9C8C0'
+        backgroundColor: '#544E50',
+        color: '#E9E3E3'
     },
     addButonBottom: {
-        backgroundColor: '#F4717F',
+        backgroundColor: '#544E50',
         position: 'absolute',
-        // top: 300,
         right: 0,
         bottom: 0,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
         padding: 10,
         borderRadius: 50,
-        width: 100,
+        width: 80,
     },
     addButonBottomText: {
         fontSize: 48,
-        color: 'white',
+        textAlign: 'center',
+        color: '#E9E3E3',
+        backgroundColor: 'transparent',
+    },
+    subAddContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: "space-evenly",
+        backgroundColor: '#544E50'
     }
 });
