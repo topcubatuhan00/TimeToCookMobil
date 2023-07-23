@@ -27,7 +27,7 @@ const ProductCard = ({ product, getStoredItems }) => {
         setDiffDay(differenceInDays)
         if (differenceInDays <= 1) {
             setClassName(true)
-        } 
+        }
         if (differenceInDays <= 0) {
             // deleteProduct()
         }
@@ -36,8 +36,8 @@ const ProductCard = ({ product, getStoredItems }) => {
 
     return (
         <View style={styles.BaseContainer}>
-            <View style={className ? styles.Dangercontainer : styles.container}>
-                <Text style={styles.date}>{diffDay} Gün Kullanılabilir</Text>
+            <View style={diffDay <= 0 ? styles.Dangercontainer : diffDay <= 1 ? styles.Warningcontainer : styles.container}>
+                <Text style={styles.date}>{diffDay <= 0 ? 'Son Kullanma Tarihi Geçmiş Ürün' : diffDay <= 1 ? 'Bugün tüketilmeli' : `${diffDay} Gün Ömrü Kaldı`}</Text>
                 <Text style={styles.text}>{product.name}</Text>
             </View>
             {/* <TouchableOpacity onPress={async () => {

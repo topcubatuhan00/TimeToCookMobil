@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-const windowHeight = (Dimensions.get("window").height) - 200;
+const windowHeight = (Dimensions.get("window").height) - 215;
 const Height = (Dimensions.get("window").height)-24;
 
 export default StyleSheet.create({
@@ -13,11 +13,14 @@ export default StyleSheet.create({
         height: windowHeight,
     },
     addContainer: {
-        borderRadius: 20,
         position: 'absolute',
         bottom: 0,
         left: 0,
         right: 0,
+        height: 100,
+        backgroundColor: '#544E50',
+        display: 'flex',
+        justifyContent: 'center',
     },
     button: {
         backgroundColor: '#544E50',
@@ -51,16 +54,17 @@ export default StyleSheet.create({
         color: '#E9E3E3'
     },
     addButonBottom: {
-        backgroundColor: '#544E50',
+        backgroundColor: '#0A5688',
         position: 'absolute',
         right: 0,
         bottom: 0,
         padding: 10,
         borderRadius: 50,
-        width: 80,
+        width: 50,
+        margin: 5,
     },
     addButonBottomText: {
-        fontSize: 48,
+        fontSize: 26,
         textAlign: 'center',
         color: '#E9E3E3',
         backgroundColor: 'transparent',
@@ -69,6 +73,6 @@ export default StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: "space-evenly",
-        backgroundColor: '#544E50'
+        backgroundColor: '#544E50',
     }
 });
