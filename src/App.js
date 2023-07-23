@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { SafeAreaView, TextInput, View, Button, Text, FlatList, Keyboard, Modal, TouchableHighlight } from "react-native";
+import { SafeAreaView, TextInput, View, Button, Text, FlatList, Keyboard, Modal, TouchableHighlight, Image } from "react-native";
 import Header from "./components/Header/Header";
 import styles from './App.style'
 import ProductCard from "./components/ProductCard/ProductCard";
@@ -87,10 +87,18 @@ function App() {
         <SafeAreaView style={styles.baseContainer}>
             <Header style={styles.header} />
             <View style={styles.container}>
-                <FlatList
-                    data={listItems}
-                    renderItem={renderItem}
-                />
+                {
+                    listItems.length > 0 || addVisible ?
+                        <FlatList
+                            data={listItems}
+                            renderItem={renderItem}
+                        />
+                        :
+                        <View>
+                            <Text style={{ fontSize: 38, textAlign: 'center', marginTop: 250 }}>Listeleneck Ürün Bulunamadı Yenisi Ekle</Text>
+                            <Image style={{width:150, height: 150, position: 'absolute', left:150, top:400, transform: 'rotate(90deg)'}} source={{uri:'https://t3.ftcdn.net/jpg/05/94/38/92/360_F_594389223_fK28cMRlNoIfKGUE1Y9l6abCnsC28CrI.jpg'}} />
+                        </View>
+                }
             </View>
             <View style={[styles.addContainer, isKeyboardOpen && { flex: 1, bottom: 250 }, !addVisible && { display: 'none' }]}>
                 <TextInput

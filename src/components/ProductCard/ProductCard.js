@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import styles from './ProductCard.style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Icon } from '@rneui/themed';
 
 const ProductCard = ({ product, getStoredItems }) => {
 
@@ -36,15 +37,18 @@ const ProductCard = ({ product, getStoredItems }) => {
 
     return (
         <View style={styles.BaseContainer}>
+            <TouchableOpacity onPress={async () => {
+                deleteProduct()
+            }}>
+                <Text style={styles.deleteButton}>
+                    🗑️
+                </Text>
+            </TouchableOpacity>
             <View style={diffDay <= 0 ? styles.Dangercontainer : diffDay <= 1 ? styles.Warningcontainer : styles.container}>
                 <Text style={styles.date}>{diffDay <= 0 ? 'Son Kullanma Tarihi Geçmiş Ürün' : diffDay <= 1 ? 'Bugün tüketilmeli' : `${diffDay} Gün Ömrü Kaldı`}</Text>
                 <Text style={styles.text}>{product.name}</Text>
             </View>
-            {/* <TouchableOpacity onPress={async () => {
-                deleteProduct()
-            }}>
-                <Text style={styles.deleteButton}>Sil</Text>
-            </TouchableOpacity> */}
+
         </View>
     );
 };

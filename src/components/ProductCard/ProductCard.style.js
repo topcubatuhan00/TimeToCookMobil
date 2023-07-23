@@ -13,18 +13,18 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        flex: 2,
     },
     text: {
         fontSize: 20,
         fontWeight: 'bold',
     },
-    // BaseContainer:{
-    //     display: 'flex',
-    //     flexDirection: 'row',
-    //     justifyContent: 'space-between',
-    //     alignItems: 'center',
-    //     margin: 20
-    // },
+    BaseContainer:{
+        display: 'flex',
+        flexDirection: 'row',
+        // justifyContent: 'space-between',
+        alignItems: 'center',
+    },
     Dangercontainer: {
         paddingTop: 20,
         paddingBottom: 20,
@@ -37,6 +37,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        flex: 2,
     },
     Warningcontainer: {
         paddingTop: 20,
@@ -50,12 +51,9 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        flex: 2,
     },
-    // deleteButton:{
-    //     backgroundColor: 'red',
-    //     padding: 15,
-    //     borderRadius: 10,
-    //     color: 'white',
-    //     fontWeight: 'bold',
-    // }
+    deleteButton:{
+        fontSize: 28
+    }
 })
