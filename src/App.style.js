@@ -21,7 +21,7 @@ export default StyleSheet.create({
         borderRadius: 20,
     },
     addButonBottom: {
-        backgroundColor: '#0A5688',
+        backgroundColor: '#435B66',
         position: 'absolute',
         right: 0,
         bottom: 0,
