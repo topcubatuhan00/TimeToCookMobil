@@ -1,7 +1,7 @@
 import { StyleSheet, Dimensions } from "react-native";
 
 const windowHeight = (Dimensions.get("window").height) - 215;
-const Height = (Dimensions.get("window").height)-24;
+const Height = (Dimensions.get("window").height) - 24;
 
 export default StyleSheet.create({
     baseContainer: {
@@ -12,46 +12,13 @@ export default StyleSheet.create({
         paddingRight: 0,
         height: windowHeight,
     },
-    addContainer: {
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        height: 100,
-        backgroundColor: '#544E50',
-        display: 'flex',
-        justifyContent: 'center',
-    },
-    button: {
-        backgroundColor: '#544E50',
-    },
-    buttonText: {
-        textAlign: 'center',
-        fontSize: 20,
-        color: 'white',
-        letterSpacing: 1,
-    },
-    SKTButton: {
-        backgroundColor: '#544E50',
-    },
-    SKTButtonText: {
-        textAlign: 'center',
-        fontSize: 20,
-        color: 'black',
-        letterSpacing: 1,
-    },
     input: {
-        backgroundColor: '#544E50',
+        backgroundColor: '#E7B10A',
         color: 'white',
         fontSize: 20,
-        textAlign: 'center'
-    },
-    date: {
-        fontWeight: 'bold',
-        fontSize: 24,
-        textAlign: 'center',
-        backgroundColor: '#544E50',
-        color: '#E9E3E3'
+        paddingLeft: 10,
+        margin: 20,
+        borderRadius: 20,
     },
     addButonBottom: {
         backgroundColor: '#0A5688',
@@ -69,10 +36,18 @@ export default StyleSheet.create({
         color: '#E9E3E3',
         backgroundColor: 'transparent',
     },
-    subAddContainer: {
+    arrow: {
+        width: 150, 
+        height: 150, 
+        position: 'absolute', 
+        left: 150, 
+        top: 400, 
+        transform: [{ rotate: '90deg' }]
+    },
+    buttonsView: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: "space-evenly",
-        backgroundColor: '#544E50',
-    }
+        justifyContent: 'center',
+        marginTop: 20,
+    },
 });
