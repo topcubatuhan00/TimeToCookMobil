@@ -55,5 +55,62 @@ export default StyleSheet.create({
     },
     deleteButton:{
         fontSize: 28
-    }
+    },
+
+    // Receipe Styles
+    receipeTitle:{
+        textAlign: 'center',
+        fontSize: 24,
+        padding: 10,
+        backgroundColor: '#F9D162',
+        fontWeight: 'bold',
+    },
+    receipeView:{
+        backgroundColor: 'red',
+        padding: 20,
+        margin: 10,
+        borderRadius: 10,
+        backgroundColor: '#CEE6F3',
+        marginTop: 30,
+    },
+    receipeName:{
+        fontSize: 20,
+        textAlign: 'center',
+        borderBottomWidth: .5,
+    },
+    receipeDescription:{
+        fontSize: 16,
+        marginTop: 20,
+    },
+    receipeCloseButton:{
+        backgroundColor: '#C51605',
+        padding: 10,
+        marginRight: 10,
+        borderRadius: 10,
+    },
+    receipeCloseButtonText:{
+        fontSize: 22,
+        textAlign: 'center',
+        color: '#FFF',
+        fontWeight: 'bold',
+    },
+    receipeButtonContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 20,
+    },
+    receipeButtonRemove:{
+        backgroundColor: '#557A46',
+        padding: 10,
+        marginLeft: 10,
+        borderRadius: 10,
+    },
+    receipeButtonRemoveItem:{
+        fontSize: 22,
+        textAlign: 'center',
+        color: '#FFF',
+        fontWeight: 'bold',
+    },
 })

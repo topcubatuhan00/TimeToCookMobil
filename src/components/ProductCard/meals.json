@@ -1,0 +1,457 @@
+[
+    {
+        "item": "patlıcan",
+        "meal": [
+            {
+                "name": "karnı yarık",
+                "recipe": "Patlıcanların ortasının açılıp içine doldurulması ve kızartılması."
+            },
+            {
+                "name": "oturtma",
+                "recipe": "Patlıcan, patates ve kabak dilimlerinin sırayla dizilip fırında pişirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "domates",
+        "meal": [
+            {
+                "name": "domates çorbası",
+                "recipe": "Domateslerin haşlanıp ezilmesi ve baharatlarla çorba haline getirilmesi."
+            },
+            {
+                "name": "soslu makarna",
+                "recipe": "Makarnanın haşlanıp, domates sosu ve diğer malzemelerle karıştırılması."
+            }
+        ]
+    },
+    {
+        "item": "salatalık",
+        "meal": [
+            {
+                "name": "cacık",
+                "recipe": "Salatalık ve yoğurdun çeşitli baharatlarla karıştırılması."
+            },
+            {
+                "name": "salata",
+                "recipe": "Salatalık ve diğer sebzelerin doğranıp sosla servis edilmesi."
+            }
+        ]
+    },
+    {
+        "item": "elma",
+        "meal": [
+            {
+                "name": "elma dilimleri",
+                "recipe": "Elmaların dilimlenmesi ve servis edilmesi."
+            },
+            {
+                "name": "elmalı turta",
+                "recipe": "Elmalı iç harcın hamur arasına konularak fırında pişirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "armut",
+        "meal": [
+            {
+                "name": "armutlu kek",
+                "recipe": "Armut parçalarının kek hamuruna eklenip pişirilmesi."
+            },
+            {
+                "name": "armut kompostosu",
+                "recipe": "Armutların dilimlenip şekerle kaynatılması."
+            }
+        ]
+    },
+    {
+        "item": "portakal",
+        "meal": [
+            {
+                "name": "portakal suyu",
+                "recipe": "Portakalın sıkılıp suyunun elde edilmesi."
+            },
+            {
+                "name": "portakallı kek",
+                "recipe": "Portakal kabuğu ve suyunun kek hamuruna eklenip pişirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "havuç",
+        "meal": [
+            {
+                "name": "havuçlu kek",
+                "recipe": "Havuçların rendelenip kek hamuruna eklenip pişirilmesi."
+            },
+            {
+                "name": "havuçlu pilav",
+                "recipe": "Havuçların doğranıp pilavla birlikte pişirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "lahana",
+        "meal": [
+            {
+                "name": "lahana sarması",
+                "recipe": "Lahanaların dolma harcıyla sarılıp pişirilmesi."
+            },
+            {
+                "name": "lahana çorbası",
+                "recipe": "Lahanaların doğranıp çeşitli malzemelerle çorba haline getirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "ıspanak",
+        "meal": [
+            {
+                "name": "ıspanaklı börek",
+                "recipe": "Ispanakların doğranıp hamur arasına konularak fırında pişirilmesi."
+            },
+            {
+                "name": "ıspanak salatası",
+                "recipe": "Ispanakların doğranıp sosla servis edilmesi."
+            }
+        ]
+    },
+    {
+        "item": "kabak",
+        "meal": [
+            {
+                "name": "kabak mücveri",
+                "recipe": "Kabakların rendelenip hamur içine karıştırılarak kızartılması."
+            },
+            {
+                "name": "kabak kek",
+                "recipe": "Kabakların rendelenip kek hamuruna eklenip pişirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "kiraz",
+        "meal": [
+            {
+                "name": "kiraz reçeli",
+                "recipe": "Kirazların şekerle kaynatılarak reçel yapılması."
+            },
+            {
+                "name": "kirazlı pasta",
+                "recipe": "Kirazların hamur içine eklenip fırında pişirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "erik",
+        "meal": [
+            {
+                "name": "erik kompostosu",
+                "recipe": "Eriklerin şekerle kaynatılarak komposto yapılması."
+            },
+            {
+                "name": "erikli tart",
+                "recipe": "Eriklerin hamur içine eklenerek tart yapılması."
+            }
+        ]
+    },
+    {
+        "item": "üzüm",
+        "meal": [
+            {
+                "name": "üzüm salatası",
+                "recipe": "Üzümlerin yıkanıp sosla servis edilmesi."
+            },
+            {
+                "name": "üzümlü kek",
+                "recipe": "Üzümlerin hamur içine eklenip pişirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "karpuz",
+        "meal": [
+            {
+                "name": "karpuz dilimleri",
+                "recipe": "Karpuzun dilimlenip servis edilmesi."
+            },
+            {
+                "name": "karpuzlu dondurma",
+                "recipe": "Karpuzun blenderdan geçirilerek dondurma yapılması."
+            }
+        ]
+    },
+    {
+        "item": "kavun",
+        "meal": [
+            {
+                "name": "kavun salatası",
+                "recipe": "Kavunun doğranıp sosla servis edilmesi."
+            },
+            {
+                "name": "kavunlu smoothie",
+                "recipe": "Kavunun blenderdan geçirilerek smoothie yapılması."
+            }
+        ]
+    },
+    {
+        "item": "muz",
+        "meal": [
+            {
+                "name": "muzlu puding",
+                "recipe": "Muzların puding malzemeleriyle karıştırılarak pişirilmesi."
+            },
+            {
+                "name": "muzlu milkshake",
+                "recipe": "Muzların süt ve dondurma ile blenderdan geçirilerek milkshake yapılması."
+            }
+        ]
+    },
+    {
+        "item": "ananas",
+        "meal": [
+            {
+                "name": "ananas suyu",
+                "recipe": "Ananasın sıkılıp suyunun elde edilmesi."
+            },
+            {
+                "name": "ananaslı muffin",
+                "recipe": "Ananas parçalarının muffin hamuruna eklenip pişirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "brokoli",
+        "meal": [
+            {
+                "name": "brokoli salatası",
+                "recipe": "Brokoli çiçeklerinin doğranıp sosla servis edilmesi."
+            },
+            {
+                "name": "brokoli çorbası",
+                "recipe": "Brokoli çiçeklerinin doğranıp çeşitli malzemelerle çorba haline getirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "ıspanak",
+        "meal": [
+            {
+                "name": "ıspanaklı börek",
+                "recipe": "Ispanakların doğranıp hamur arasına konularak fırında pişirilmesi."
+            },
+            {
+                "name": "ıspanak salatası",
+                "recipe": "Ispanakların doğranıp sosla servis edilmesi."
+            }
+        ]
+    },
+    {
+        "item": "bezelye",
+        "meal": [
+            {
+                "name": "bezelye pilavı",
+                "recipe": "Bezelyelerin pilavla birlikte pişirilmesi."
+            },
+            {
+                "name": "bezelye çorbası",
+                "recipe": "Bezelyelerin haşlanıp çeşitli malzemelerle çorba haline getirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "fasulye",
+        "meal": [
+            {
+                "name": "fasulye yemeği",
+                "recipe": "Fasulyelerin haşlanıp çeşitli malzemelerle yemeğinin yapılması."
+            },
+            {
+                "name": "fasulye salatası",
+                "recipe": "Fasulyelerin haşlanıp sosla servis edilmesi."
+            }
+        ]
+    },
+    {
+        "item": "kırmızı biber",
+        "meal": [
+            {
+                "name": "kırmızı biber dolması",
+                "recipe": "Kırmızı biberlerin iç harçla doldurulup pişirilmesi."
+            },
+            {
+                "name": "kırmızı biber turşusu",
+                "recipe": "Kırmızı biberlerin turşu yapılması."
+            }
+        ]
+    },
+    {
+        "item": "patates",
+        "meal": [
+            {
+                "name": "patates kızartması",
+                "recipe": "Patateslerin dilimlenip kızartılması."
+            },
+            {
+                "name": "patates çorbası",
+                "recipe": "Patateslerin haşlanıp çeşitli malzemelerle çorba haline getirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "kereviz",
+        "meal": [
+            {
+                "name": "kereviz salatası",
+                "recipe": "Kerevizin doğranıp sosla servis edilmesi."
+            },
+            {
+                "name": "kereviz çorbası",
+                "recipe": "Kerevizin haşlanıp çeşitli malzemelerle çorba haline getirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "limon",
+        "meal": [
+            {
+                "name": "limonlu kek",
+                "recipe": "Limonun suyu ve kabuğunun kek hamuruna eklenip pişirilmesi."
+            },
+            {
+                "name": "limonlu dondurma",
+                "recipe": "Limonun suyu ve kabuğunun dondurma yapımında kullanılması."
+            }
+        ]
+    },
+    {
+        "item": "mandalina",
+        "meal": [
+            {
+                "name": "mandalina soslu tavuk",
+                "recipe": "Mandalinanın suyu ve kabuğunun tavukla birlikte pişirilmesi."
+            },
+            {
+                "name": "mandalinalı turta",
+                "recipe": "Mandalina dilimlerinin hamur içine eklenerek turta yapılması."
+            }
+        ]
+    },
+    {
+        "item": "mango",
+        "meal": [
+            {
+                "name": "mango smoothie",
+                "recipe": "Mangonun blenderdan geçirilerek smoothie yapılması."
+            },
+            {
+                "name": "mangolu puding",
+                "recipe": "Mangonun puding malzemeleriyle karıştırılarak pişirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "marul",
+        "meal": [
+            {
+                "name": "marul salatası",
+                "recipe": "Marul yapraklarının doğranıp sosla servis edilmesi."
+            },
+            {
+                "name": "marullu sandviç",
+                "recipe": "Marul yapraklarının sandviç içine eklenmesi."
+            }
+        ]
+    },
+    {
+        "item": "maydanoz",
+        "meal": [
+            {
+                "name": "maydanozlu pilav",
+                "recipe": "Maydanozun pilavla birlikte pişirilmesi."
+            },
+            {
+                "name": "maydanozlu börek",
+                "recipe": "Maydanozun hamur arasına konularak fırında pişirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "nar",
+        "meal": [
+            {
+                "name": "nar ekşisi soslu salata",
+                "recipe": "Nar ekşisinin sosla salata yapımında kullanılması."
+            },
+            {
+                "name": "narlı cheesecake",
+                "recipe": "Nar tanelerinin cheesecake üzerine eklenerek servis edilmesi."
+            }
+        ]
+    },
+    {
+        "item": "pırasa",
+        "meal": [
+            {
+                "name": "pırasa yemeği",
+                "recipe": "Pırasaların doğranıp çeşitli malzemelerle yemeğinin yapılması."
+            },
+            {
+                "name": "pırasalı börek",
+                "recipe": "Pırasaların hamur arasına konularak fırında pişirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "roka",
+        "meal": [
+            {
+                "name": "roka salatası",
+                "recipe": "Rokanın doğranıp sosla servis edilmesi."
+            },
+            {
+                "name": "rokalı pizza",
+                "recipe": "Roka yapraklarının pizza üzerine eklenerek pişirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "soğan",
+        "meal": [
+            {
+                "name": "soğan çorbası",
+                "recipe": "Soğanların doğranıp çeşitli malzemelerle çorba haline getirilmesi."
+            },
+            {
+                "name": "soğan halkaları",
+                "recipe": "Soğanların halka şeklinde doğranıp kızartılması."
+            }
+        ]
+    },
+    {
+        "item": "tavuk göğsü",
+        "meal": [
+            {
+                "name": "tavuk göğsü tatlısı",
+                "recipe": "Tavuk göğsünün sütlü tatlı malzemeleriyle pişirilmesi."
+            },
+            {
+                "name": "tavuk göğsü çorbası",
+                "recipe": "Tavuk göğsünün doğranıp çeşitli malzemelerle çorba haline getirilmesi."
+            }
+        ]
+    },
+    {
+        "item": "vişne",
+        "meal": [
+            {
+                "name": "vişne reçeli",
+                "recipe": "Vişnelerin şekerle kaynatılarak reçel yapılması."
+            },
+            {
+                "name": "vişneli pasta",
+                "recipe": "Vişnelerin hamur içine eklenip pasta yapılması."
+            }
+        ]
+    }
+]

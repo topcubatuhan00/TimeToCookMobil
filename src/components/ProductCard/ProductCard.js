@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View, Modal, TouchableWithoutFeedback, FlatList } from 'react-native';
 import styles from './ProductCard.style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Icon } from '@rneui/themed';
+import data from './meals'
 
 const ProductCard = ({ product, getStoredItems }) => {
 
-    const [className, setClassName] = useState(false)
+    const [modalVisible, setModalVisible] = useState(false)
     const [diffDay, setDiffDay] = useState()
+    const [meals, setMeals] = useState([])
 
     const deleteProduct = async () => {
         const storedItems = await AsyncStorage.getItem('items');
@@ -26,14 +27,34 @@ const ProductCard = ({ product, getStoredItems }) => {
         const differenceInMilliseconds = target - today;
         const differenceInDays = differenceInMilliseconds / (1000 * 60 * 60 * 24);
         setDiffDay(differenceInDays)
-        if (differenceInDays <= 1) {
-            setClassName(true)
-        }
-        if (differenceInDays <= 0) {
-            // deleteProduct()
-        }
-
     }, [product.date]);
+
+    const handleClickProduct = () => {
+        setModalVisible(true)
+
+        const selectedProductData = data.find((item) => item.item === product.name.toLowerCase());
+        if (selectedProductData) {
+            setMeals(selectedProductData.meal)
+        } else {
+            //! show alert
+        }
+    }
+
+    const renderReceipe = ({ item }) => (
+        <View style={styles.receipeView}>
+            <Text style={styles.receipeName}>
+                {item.name}
+            </Text>
+            <Text style={styles.receipeDescription}>
+                {item.recipe}
+            </Text>
+        </View>
+    )
+
+    const handleClickRemoveItemButton = () => {
+        deleteProduct();
+        setModalVisible(false)
+    }
 
     return (
         <View style={styles.BaseContainer}>
@@ -44,11 +65,41 @@ const ProductCard = ({ product, getStoredItems }) => {
                     🗑️
                 </Text>
             </TouchableOpacity>
-            <View style={diffDay <= 0 ? styles.Dangercontainer : diffDay <= 1 ? styles.Warningcontainer : styles.container}>
-                <Text style={styles.date}>{diffDay <= 0 ? 'Son Kullanma Tarihi Geçmiş Ürün' : diffDay <= 1 ? 'Bugün tüketilmeli' : `${diffDay} Gün Ömrü Kaldı`}</Text>
-                <Text style={styles.text}>{product.name}</Text>
-            </View>
-
+            <TouchableWithoutFeedback onPress={() => handleClickProduct()} >
+                <View style={diffDay <= 0 ? styles.Dangercontainer : diffDay <= 1 ? styles.Warningcontainer : styles.container}>
+                    <Text style={styles.date}>{diffDay <= 0 ? 'Son Kullanma Tarihi Geçmiş Ürün' : diffDay <= 1 ? 'Bugün tüketilmeli' : `${diffDay} Gün Ömrü Kaldı`}</Text>
+                    <Text style={styles.text}>{product.name}</Text>
+                </View>
+            </TouchableWithoutFeedback>
+            <Modal visible={modalVisible && meals.length > 0}>
+                <Text style={styles.receipeTitle}>İstersen Bu Yemekleri Deneyebilirsin</Text>
+                <FlatList
+                    data={meals}
+                    renderItem={renderReceipe}
+                />
+                <View style={styles.receipeButtonContainer}>
+                    <View>
+                        <TouchableOpacity
+                            style={styles.receipeCloseButton}
+                            onPress={() => setModalVisible(false)}
+                        >
+                            <Text style={styles.receipeCloseButtonText}>
+                                Kapat
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View>
+                        <TouchableOpacity
+                            style={styles.receipeButtonRemove}
+                            onPress={() => handleClickRemoveItemButton()}
+                        >
+                            <Text style={styles.receipeButtonRemoveItem}>
+                                Yiyeceği Kaldır
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </Modal>
         </View>
     );
 };
