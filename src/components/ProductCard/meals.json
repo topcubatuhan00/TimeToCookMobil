@@ -1,14 +1,14 @@
 [
     {
-        "item": "patlıcan",
+        "item": "patlican",
         "meal": [
             {
                 "name": "karnı yarık",
-                "recipe": "Patlıcanların ortasının açılıp içine doldurulması ve kızartılması."
+                "recipe": "patlicanların ortasının açılıp içine doldurulması ve kızartılması."
             },
             {
                 "name": "oturtma",
-                "recipe": "Patlıcan, patates ve kabak dilimlerinin sırayla dizilip fırında pişirilmesi."
+                "recipe": "patlican, patates ve kabak dilimlerinin sırayla dizilip fırında pişirilmesi."
             }
         ]
     },

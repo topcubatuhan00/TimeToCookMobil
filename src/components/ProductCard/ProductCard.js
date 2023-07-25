@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Text, TouchableOpacity, View, Modal, TouchableWithoutFeedback, FlatList } from 'react-native';
+import { Text, TouchableOpacity, View, Modal, TouchableWithoutFeedback, FlatList, Alert } from 'react-native';
 import styles from './ProductCard.style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import data from './meals'
@@ -36,7 +36,10 @@ const ProductCard = ({ product, getStoredItems }) => {
         if (selectedProductData) {
             setMeals(selectedProductData.meal)
         } else {
-            //! show alert
+            Alert.alert(
+                'Tarif Bulunamadı',
+                'Bu ürüne ait tarif bilgisi bulunamadı.'
+            )
         }
     }
 
